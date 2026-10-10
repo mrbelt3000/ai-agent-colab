@@ -1,0 +1,27 @@
+agent:
+  name: "Colab Work Agent"
+  mode: "controlled"
+  max_steps_per_task: 8
+
+paths:
+  workspace_root: "/content/ai-agent-colab"
+  drive_root: "/content/drive/MyDrive/ai-agent-colab"
+  memory_file: "memory/state.json"
+  log_file: "logs/agent.log"
+
+permissions:
+  allow_file_read: true
+  allow_file_write: true
+  allow_python_execution: true
+  allow_shell_execution: false
+  allow_git_push: false
+  require_confirmation_for:
+    - delete
+    - git_push
+    - package_install
+    - external_network
+
+model:
+  provider: "placeholder"
+  note: "Add an API model or local open-source model backend later."
+
