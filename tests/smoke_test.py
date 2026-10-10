@@ -31,11 +31,14 @@ def main() -> None:
         agent.start()
         result = agent.handle_task("Create a tiny game.")
         project = agent.create_text_project("projects/demo", "Demo Game")
+        html_game = agent.create_html_game("projects/coin_dodge", "Coin Dodge")
 
         assert result["status"] == "planned"
         assert "run_python" in result["available_tools"]
         assert (root / "projects" / "demo" / "main.py").exists()
+        assert (root / "projects" / "coin_dodge" / "index.html").exists()
         assert "Demo Game" in project["test_output"]
+        assert "index.html" in html_game["files"]
         assert config.memory_file.exists()
         assert config.log_file.exists()
 

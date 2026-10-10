@@ -70,6 +70,7 @@ The first version only includes basic local tools:
 - list directory
 - run Python script
 - append log entry
+- generate a small browser game prototype
 
 Potentially destructive actions such as deleting files, installing packages, or pushing to GitHub should be added only behind explicit confirmation.
 
